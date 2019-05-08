@@ -12,6 +12,8 @@ df1 = pd.read_csv(data_url)
 
 dfList = df1['medium_image_url'].tolist()
 print("size", len(dfList))
+print(dfList[1])
+print(type(dfList[1])) 
 
 
 # method for downloading by a wget-call
@@ -25,10 +27,11 @@ def download(url,name):
 ### Running through it as a list: 
 count_lines = 0
 for x in dfList:
-    image_url = x
-    file_name = "image"+str(count_lines)
-    download(str(image_url), str(file_name))
-    print("count ", count_lines)
+    if isinstance(x, str):
+        image_url = x
+        file_name = "image"+str(count_lines)
+        download(str(image_url), str(file_name))
+        print("count ", count_lines)
     count_lines += 1
 
 '''
