@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 images/
 .DS_Store
+data/smk_all.csv
+data/twitter_finetuned_test4_iter_180.caffemodel
